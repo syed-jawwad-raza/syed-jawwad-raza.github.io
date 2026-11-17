@@ -4,7 +4,7 @@ Live at **https://syed-jawwad-raza.github.io/**
 
 A one-page portfolio designed like engraved security paper. The rosette at the top is a guilloche pattern drawn on a canvas from a random seed, so every visit gets a different plate. The contact form is a cheque that opens an email draft.
 
-There is no framework, build step or tracker: one HTML page, one data file and three self-hosted fonts.
+Built with plain HTML, CSS and JavaScript.
 
 ## Updating it
 

@@ -301,7 +301,7 @@ input.fill:focus-visible { outline: 0; border-bottom-color: var(--pen); backgrou
 <footer class="foot wrap">
   <p id="f-id"></p>
   <p id="f-links"></p>
-  <p>No frameworks, no trackers, no build step.</p>
+  <p id="f-place"></p>
 </footer>
 
 <noscript><p class="oops">This site needs JavaScript to show its content.</p></noscript>
@@ -413,7 +413,8 @@ input.fill:focus-visible { outline: 0; border-bottom-color: var(--pen); backgrou
     });
 
     /* ----- Footer ----- */
-    $('#f-id').textContent = `${P.name}, ${P.location}`;
+    $('#f-id').textContent = `© ${new Date().getFullYear()} ${P.name}`;
+    $('#f-place').textContent = P.location;
     $('#f-links').innerHTML = link(P.email, mail) + each(P.links, l => link(l.label, l.url));
 
     /* ----- The "after" bars shrink to their true length when you reach them ----- */
@@ -527,7 +528,7 @@ input.fill:focus-visible { outline: 0; border-bottom-color: var(--pen); backgrou
     new IntersectionObserver(([e]) => el.classList.toggle('paused', !e.isIntersecting)).observe(el);
   }
 
-  /* ----- index.html?check: the one runnable check. Run it after editing content.js. ----- */
+  /* ----- index.html?check: self-check. Run it after editing content.js. ----- */
   function check(draft) {
     const bad = [], need = (ok, msg) => ok || bad.push(msg);
     for (const k of ['name', 'role', 'headline', 'intro', 'location', 'email']) need(P[k], `${k} is empty`);

@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Syed Jawwad Raza, Senior Backend Engineer</title>
+<meta name="description" content="Syed Jawwad Raza, senior backend engineer in fintech and AI: payment and remittance systems in .NET and Node.js.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Syed Jawwad Raza, backend engineer for fintech and AI">
+<meta property="og:description" content="Payment and remittance systems in .NET and Node.js, processing 50,000+ remittances a day.">
+<meta property="og:image" content="https://syed-jawwad-raza.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230D3B2E'/><text x='32' y='47' font-family='Georgia,serif' font-style='italic' font-size='44' text-anchor='middle' fill='%23ECF1EA'>J</text></svg>">
+<style>
+/* ---------- Fonts (self-hosted, so the page makes no third-party requests) ---------- */
+@font-face { font-family: "Bodoni Moda"; src: url("fonts/bodoni-moda.woff2") format("woff2"); font-weight: 400 900; font-display: block; }
+@font-face { font-family: "Bodoni Moda"; src: url("fonts/bodoni-moda-italic.woff2") format("woff2"); font-weight: 400 900; font-style: italic; font-display: block; }
+@font-face { font-family: "Libre Franklin"; src: url("fonts/libre-franklin.woff2") format("woff2"); font-weight: 300 700; font-display: swap; }
+@property --sweep { syntax: "<angle>"; inherits: false; initial-value: 374deg; }
+
+/* ---------- Tokens ----------
+   Printed matter is intaglio green. Anything you can act on is pen blue.
+   Stamp red is only for recognition. The iris inks are only for line-work. */
+:root {
+  --paper: #ECF1EA;
+  --cheque: #E0ECEB;
+  --ink: #0D3B2E;
+  --ink-soft: #40625A;
+  --rule: #0D3B2E40;
+  --iris-a: #0B6B50;
+  --iris-b: #2A56A8;
+  --iris-c: #7A3B8C;
+  --pen: #1D3FCC;
+  --pen-deep: #142E9C;
+  --stamp: #B8233F;
+  --display: "Bodoni Moda", "Bodoni MT", Didot, "Times New Roman", serif;
+  --sans: "Libre Franklin", "Franklin Gothic Medium", "Segoe UI", system-ui, sans-serif;
+  --gutter: clamp(1.1rem, 4.5vw, 3rem);
+  --wave: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='18' viewBox='0 0 24 18'><g fill='none' stroke='%230D3B2E' stroke-width='.55'><path id='w' d='M-36 9q6-14 12 0t12 0 12 0 12 0 12 0 12 0'/><use href='%23w' x='4'/><use href='%23w' x='8'/><use href='%23w' x='12'/><use href='%23w' x='16'/><use href='%23w' x='20'/></g></svg>");
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 var(--sans); font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+h1, h2, h3, p, ul, figure { margin: 0; }
+ul { padding: 0; list-style: none; }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.06; letter-spacing: -.012em; text-wrap: balance; }
+h3 { font-variation-settings: "opsz" 18; }   /* sturdier hairlines at reading sizes */
+p { text-wrap: pretty; }
+strong { font-weight: 600; }
+a { color: var(--pen); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--pen); outline-offset: 3px; }
+[hidden] { display: none !important; }
+.wrap { width: min(100% - 2 * var(--gutter), 72rem); margin-inline: auto; }
+.wave { height: 18px; background: var(--wave) 0 50% / 24px 18px repeat-x; }
+.skip { position: absolute; left: -999rem; top: 0; z-index: 10; padding: .6rem 1rem; background: var(--ink); color: var(--paper); }
+.skip:focus { left: 0; }
+
+/* ---------- Header ---------- */
+.top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding-block: 1.2rem .6rem; }
+.mark { font: italic 600 1.45rem/1 var(--display); color: var(--ink); text-decoration: none; }
+.top nav { display: flex; gap: 1.6rem; font-size: .95rem; }
+.top nav a { padding-block: .35rem; text-decoration: none; }
+.top nav a:hover { text-decoration: underline; }
+
+/* ---------- Hero ---------- */
+.hero { container-type: inline-size; padding-block: clamp(.5rem, 2vw, 1.25rem) clamp(3rem, 7vw, 5.5rem); }
+.name { position: relative; z-index: 1; margin-left: -.03em; font-size: 15vw; font-size: 16cqi; line-height: .92; letter-spacing: -.025em; text-wrap: wrap; }
+.name span { position: relative; display: inline-block; isolation: isolate; }
+/* The engraver's shade: a copy of each word with its hairlines worn away, hatched, and set behind the solid face. */
+.name span::after { content: attr(data-w); content: attr(data-w) / ""; position: absolute; left: .05em; top: .045em; z-index: -1; color: var(--iris-b); filter: url(#stems); -webkit-mask-image: repeating-linear-gradient(135deg, #000 0 1.1px, #0000 1.1px 3.6px); mask-image: repeating-linear-gradient(135deg, #000 0 1.1px, #0000 1.1px 3.6px); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+.micro { margin-bottom: clamp(1.3rem, 3vw, 1.9rem); overflow: hidden; white-space: nowrap; font: 600 5px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; user-select: none; }
+.lede { font: italic 500 clamp(1.6rem, 3.2vw, 2.3rem)/1.12 var(--display); font-variation-settings: "opsz" 30; letter-spacing: -.01em; text-wrap: balance; }
+.intro { margin-top: 1rem; max-width: 33rem; font-size: 1.125rem; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.4rem; margin-top: 1.8rem; }
+.links { display: inline-flex; flex-wrap: wrap; gap: .4rem 1.4rem; }
+.btn { display: inline-block; padding: .95rem 1.35rem; border: 1.5px solid var(--pen); border-radius: 2px; background: none; color: var(--pen); font: 600 1rem/1 var(--sans); text-decoration: none; cursor: pointer; }
+.btn:hover { background: var(--pen); color: var(--paper); }
+.btn.solid { background: var(--pen); color: var(--paper); }
+.btn.solid:hover { border-color: var(--pen-deep); background: var(--pen-deep); }
+.pulse { margin-top: 1.8rem; max-width: 33rem; font-size: .95rem; color: var(--ink-soft); }
+.pulse strong, .pulse b { color: var(--ink); font-weight: 600; }
+
+/* ---------- The guilloche plate ---------- */
+.plate-box { order: -1; justify-self: end; width: min(66%, 21rem); margin-top: -3.3rem; }
+.plate { position: relative; aspect-ratio: 1; isolation: isolate; overflow: hidden; }   /* the turning canvases' corners would otherwise widen the page */
+.plate canvas { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: multiply; }
+.plate-note { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .3rem 1rem; margin-top: .9rem; font-size: .85rem; line-height: 1.45; color: var(--ink-soft); }
+.linkbtn { padding: 0; border: 0; background: none; color: var(--pen); font: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; cursor: pointer; }
+@keyframes turn { to { rotate: 1turn; } }
+@keyframes cut { from { --sweep: 0deg; } to { --sweep: 374deg; } }
+
+/* ---------- Sections ---------- */
+.sec { padding-block: clamp(3.5rem, 8vw, 6.5rem); border-top: 1px solid var(--rule); }
+.sec h2 { font-size: clamp(2.3rem, 5.2vw, 3.7rem); }
+.sec-note { margin-top: .75rem; max-width: 36rem; color: var(--ink-soft); }
+.sec-body { margin-top: clamp(1.8rem, 4vw, 3rem); }
+
+/* Results: before and after, to scale */
+.result { display: grid; gap: 1.2rem clamp(1.5rem, 5vw, 4.5rem); align-items: center; padding-block: 1.9rem; border-top: 1px solid var(--rule); }
+.result:first-child { padding-top: 0; border-top: 0; }
+.result h3 { font-size: clamp(1.45rem, 2.5vw, 1.9rem); }
+.result p { margin-top: .6rem; }
+.result small { display: block; margin-top: .45rem; font-size: .88rem; color: var(--ink-soft); }
+.pair { display: grid; gap: .55rem; font-size: .92rem; }
+.line { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr); align-items: center; gap: .6rem; color: var(--ink-soft); }
+.track { display: flex; align-items: center; gap: .7rem; color: var(--ink); }
+.track b { font-weight: 600; white-space: nowrap; }
+.bar { flex: none; width: max(3px, calc((100% - 7.6rem) * var(--f, 1))); height: 1.15rem; border: 1px solid var(--ink); background: repeating-linear-gradient(115deg, var(--ink) 0 1px, transparent 1px 5px); }
+.bar.after { --f: 1; background: var(--ink); }
+.result.in .bar.after { --f: var(--to); }
+
+/* What I work on */
+.focus { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 2.2rem clamp(2rem, 6vw, 5rem); }
+.focus h3 { font-size: clamp(1.5rem, 2.6vw, 1.9rem); font-style: italic; }
+.focus p { margin-top: .5rem; max-width: 31rem; }
+
+/* Ledger rows: experience, skills, education */
+.row { display: grid; gap: .5rem 2rem; padding-block: 1.7rem; border-top: 1px solid var(--rule); }
+.row:first-child { padding-top: 0; border-top: 0; }
+.tight .row { padding-block: 1rem; }
+.tight .row:first-child { padding-top: 0; }
+.when { font-size: .93rem; line-height: 1.5; color: var(--ink-soft); }
+.row h3 { font-size: clamp(1.5rem, 2.6vw, 1.9rem); }
+.row h3 a { color: inherit; text-decoration-color: var(--pen); }
+.row h3 a:hover { color: var(--pen); }
+.row .group { font: 600 1rem/1.6 var(--sans); letter-spacing: 0; }
+.role { margin-top: .3rem; font-weight: 600; }
+.row-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1.1rem 2rem; }
+.points { display: grid; gap: .55rem; max-width: 44rem; margin-top: .9rem; }
+.points li { position: relative; padding-left: 1.25rem; }
+.points li::before { content: ""; position: absolute; left: 0; top: .8em; width: .6rem; border-top: 1px solid var(--ink); }
+.note { max-width: 44rem; margin-top: .6rem; }
+
+/* Rubber stamps for recognition */
+.stamps { display: flex; flex-wrap: wrap; gap: 1.6rem 1.5rem; padding: .35rem .5rem 0 .3rem; }
+.stamp { padding: .55rem .9rem .5rem; border: 2.5px solid; box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--stamp); color: var(--stamp); font: 700 .9rem/1.2 var(--sans); letter-spacing: .09em; text-align: center; text-transform: uppercase; rotate: -4deg; filter: url(#worn); }
+.stamp span { display: block; margin-top: .15rem; font-size: .7rem; font-weight: 600; letter-spacing: .14em; }
+.stamp:nth-child(2n) { rotate: 3deg; }
+
+/* Projects, separated by perforations */
+.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 2.4rem clamp(1.5rem, 4vw, 3rem); }
+.project { padding-top: 1.2rem; border-top: 2px dotted var(--ink); }
+.project h3 { font-size: 1.6rem; }
+.project p + p { margin-top: .7rem; }
+.stack { font-size: .88rem; color: var(--ink-soft); }
+
+/* ---------- The cheque ---------- */
+.cheque { position: relative; isolation: isolate; max-width: 60rem; border: 1px solid var(--ink); background: var(--cheque); box-shadow: 0 1px 0 #0D3B2E55, 0 26px 44px -30px #0D3B2E99; rotate: -.8deg; }
+.cheque:focus-within { rotate: 0deg; }
+.cheque::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--wave) 0 0 / 40px 30px; opacity: .09; }
+.cheque-edge { border-bottom: 1px solid var(--ink); background-color: var(--paper); }
+.cheque-body { display: grid; gap: 1.15rem; padding: clamp(1.1rem, 3vw, 1.9rem) clamp(1.1rem, 3.5vw, 2.4rem) clamp(1rem, 2.4vw, 1.5rem); }
+.date { justify-self: end; }
+.field { display: flex; align-items: baseline; gap: .75rem; }
+.field > :first-child { flex: none; font-size: .85rem; color: var(--ink-soft); }
+.fill { flex: 1; min-width: 0; padding: .1rem .3rem .2rem; border: 0; border-bottom: 1px solid var(--ink); border-radius: 0; background: none; color: var(--ink); font: 500 1.3rem/1.3 var(--display); font-variation-settings: "opsz" 18; }
+.written, input.fill { color: var(--pen); font-style: italic; }
+input.fill::placeholder { color: #445CC8; font: 400 .98rem/1.3 var(--sans); opacity: 1; }
+input.fill:focus-visible { outline: 0; border-bottom-color: var(--pen); background: #1D3FCC0F; box-shadow: 0 2px 0 var(--pen); }
+.cheque-mid { display: grid; gap: 1rem 1.6rem; align-items: end; }
+.cheque-lines { display: grid; gap: .9rem; }
+.amount { justify-self: start; padding: .6rem 1rem; border: 1.5px solid var(--ink); background: var(--paper); font: 600 1.35rem/1 var(--display); white-space: nowrap; }
+.sign { width: min(100%, 24rem); margin-left: auto; }
+.cheque-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 1.2rem 2rem; }
+.micr { height: 15px; fill: var(--ink); stroke: var(--ink); stroke-width: .3; stroke-linejoin: round; }
+.cheque-status { min-height: 1.6em; margin-top: 1.4rem; font-size: .95rem; }
+
+/* ---------- Footer, errors, checks ---------- */
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; padding-block: 1.8rem 2.6rem; font-size: .9rem; color: var(--ink-soft); }
+.foot a { margin-right: 1.1rem; }
+.oops, .check { margin: 0; padding: 1rem var(--gutter); background: var(--stamp); color: #fff; font: 600 1rem/1.5 var(--sans); white-space: pre-wrap; }
+.check { position: fixed; right: 1rem; bottom: 1rem; z-index: 9; max-width: 30rem; padding: .8rem 1.1rem; background: var(--ink); }
+.check.bad { background: var(--stamp); }
+
+/* ---------- By width ---------- */
+@media (max-width: 40rem) {
+  .top nav a:not(:last-child) { display: none; }
+}
+@media (min-width: 44rem) {
+  .name { font-size: min(10.8vw, 8.4rem); font-size: min(11.6cqi, 8.4rem); }
+  .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(2rem, 5vw, 4.5rem); margin-top: 1.6rem; }
+  .plate-box { order: 0; width: 100%; max-width: 34rem; margin-top: -4.4rem; }
+  .cheque-mid { grid-template-columns: minmax(0, 1fr) auto; }
+  .amount { justify-self: end; }
+}
+@media (min-width: 52rem) {
+  .result { grid-template-columns: minmax(0, 6fr) minmax(0, 7fr); }
+  .row { grid-template-columns: 11rem minmax(0, 1fr); }
+  .when { padding-top: .5rem; }
+}
+
+/* ---------- Motion, only for people who have not asked for less ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  .plate canvas { transform: rotate(calc(var(--tilt, 0) * 1deg)); transition: transform 1s cubic-bezier(.2, .7, .2, 1); animation: turn 280s linear infinite; }
+  .plate canvas + canvas { transform: rotate(calc(var(--tilt, 0) * -1deg)); animation-duration: 200s; animation-direction: reverse; }
+  .plate.paused canvas { animation-play-state: paused; }
+  .plate.cutting { -webkit-mask-image: conic-gradient(#000 calc(var(--sweep) - 14deg), #0000 var(--sweep)); mask-image: conic-gradient(#000 calc(var(--sweep) - 14deg), #0000 var(--sweep)); animation: cut 2.8s cubic-bezier(.45, 0, .15, 1) both; }
+  .bar.after { transition: width 1.3s cubic-bezier(.2, .75, .15, 1) .15s; }
+  .cheque { transition: rotate .5s cubic-bezier(.2, .7, .2, 1); }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wave" aria-hidden="true"></div>
+
+<header class="top wrap">
+  <a class="mark" href="#top"></a>
+  <nav id="nav" aria-label="Sections"></nav>
+</header>
+
+<main id="main">
+  <section class="hero wrap" id="top">
+    <h1 class="name" id="name"></h1>
+    <div class="hero-grid">
+      <div>
+        <div class="micro" aria-hidden="true"></div>
+        <p class="lede" id="headline"></p>
+        <p class="intro" id="intro"></p>
+        <div class="actions" id="actions"></div>
+        <p class="pulse" id="pulse"></p>
+      </div>
+      <figure class="plate-box">
+        <div class="plate" id="plate" aria-hidden="true"><canvas></canvas><canvas></canvas></div>
+        <figcaption class="plate-note">
+          <span>Plate <span id="plate-no"></span>, engraved in your browser for this visit.</span>
+          <button class="linkbtn" id="recut" type="button">Engrave another</button>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec" id="results" data-nav="Results"><div class="wrap">
+    <h2>Results</h2>
+    <p class="sec-note">What got faster. Each pair of bars is drawn to scale.</p>
+    <div class="sec-body" data-fill="results"></div>
+  </div></section>
+
+  <section class="sec" id="focus"><div class="wrap">
+    <h2>What I work on</h2>
+    <div class="sec-body focus" data-fill="focus"></div>
+  </div></section>
+
+  <section class="sec" id="experience" data-nav="Experience"><div class="wrap">
+    <h2>Experience</h2>
+    <div class="sec-body" data-fill="experience"></div>
+  </div></section>
+
+  <section class="sec" id="projects" data-nav="Projects"><div class="wrap">
+    <h2>Projects</h2>
+    <div class="sec-body projects" data-fill="projects"></div>
+  </div></section>
+
+  <section class="sec" id="skills" data-nav="Skills"><div class="wrap">
+    <h2>Skills</h2>
+    <div class="sec-body tight" data-fill="skills"></div>
+  </div></section>
+
+  <section class="sec" id="education"><div class="wrap">
+    <h2>Education</h2>
+    <div class="sec-body" data-fill="education"></div>
+  </div></section>
+
+  <section class="sec" id="contact" data-nav="Contact"><div class="wrap">
+    <h2>Get in touch</h2>
+    <p class="sec-note" id="contact-note"></p>
+    <form class="sec-body" id="cheque">
+      <div class="cheque">
+        <div class="cheque-edge wave" aria-hidden="true"></div>
+        <div class="cheque-body">
+          <p class="field date"><span>Date</span><span class="fill written" id="c-date"></span></p>
+          <div class="cheque-mid">
+            <div class="cheque-lines">
+              <p class="field"><span>Pay</span><span class="fill" id="c-payee"></span></p>
+              <p class="field"><span>The sum of</span><span class="fill" id="c-ask"></span></p>
+              <p class="field"><label for="memo">For</label><input class="fill" id="memo" name="memo" placeholder="a role, a project, a question" autocomplete="off"></p>
+            </div>
+            <p class="amount" id="c-amount"></p>
+          </div>
+          <p class="field sign"><label for="from">Signed</label><input class="fill" id="from" name="from" placeholder="your name" autocomplete="name"></p>
+          <div class="cheque-foot">
+            <svg class="micr" id="micr" aria-hidden="true" focusable="false"></svg>
+            <button class="btn solid" type="submit">Open email draft</button>
+          </div>
+        </div>
+      </div>
+      <p class="cheque-status" id="c-status" role="status"></p>
+    </form>
+  </div></section>
+</main>
+
+<div class="wave" aria-hidden="true"></div>
+<footer class="foot wrap">
+  <p id="f-id"></p>
+  <p id="f-links"></p>
+  <p>No frameworks, no trackers, no build step.</p>
+</footer>
+
+<noscript><p class="oops">This site needs JavaScript to show its content.</p></noscript>
+
+<!-- Two ink effects: worn rubber-stamp ink, and the name's shade with its hairlines worn away -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="worn"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3.2 0 0 0 2.6"/><feComposite in="SourceGraphic" operator="in"/></filter>
+  <filter id="stems"><feMorphology operator="erode" radius="1.1"/></filter>
+</svg>
+
+<script src="content.js"></script>
+<script>
+(() => {
+  const P = window.PORTFOLIO;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => `&#${c.charCodeAt(0)};`);
+  const rich = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  const each = (a, f) => (a || []).map(f).join('');
+  const link = (text, url) => url
+    ? `<a href="${esc(url)}"${/^https?:/.test(url) ? ' target="_blank" rel="noopener"' : ''}>${esc(text)}</a>`
+    : esc(text);
+  const fail = msg => document.body.insertAdjacentHTML('afterbegin', `<p class="oops" role="alert">${esc(msg)}</p>`);
+
+  if (!P) return fail('content.js did not load. Keep it next to index.html, then press F12 and look for a typo in it.');
+  try { render(); } catch (e) { fail(`content.js has a problem: ${e.message}. Press F12 for details.`); throw e; }
+
+  function render() {
+    const put = (key, html) => { const el = $(`[data-fill="${key}"]`); el.innerHTML = html; el.closest('section').hidden = !html; };
+    const mail = `mailto:${P.email}`;
+
+    /* ----- Hero ----- */
+    document.title = `${P.name}, ${P.role}`;
+    $('.mark').textContent = P.name.split(/\s+/).map(w => w[0]).join('');
+    $('.mark').setAttribute('aria-label', `${P.name}, back to top`);
+    $('#name').innerHTML = P.name.split(/\s+/).map(w => `<span data-w="${esc(w)}">${esc(w)}</span>`).join(' ');
+    $('.micro').textContent = `${P.name} ${P.role} `.repeat(60);
+    $('#headline').textContent = P.headline;
+    $('#intro').innerHTML = rich(P.intro);
+    $('#actions').innerHTML = `<a class="btn solid" href="${esc(mail)}">Email me</a>`
+      + (P.resume ? `<a class="btn" href="${esc(P.resume)}" download>Download resume</a>` : '')
+      + `<span class="links">${each(P.links, l => link(l.label, l.url))}</span>`;
+
+    if (P.volume) {
+      const every = 86400 / P.volume.perDay, opened = performance.now();
+      $('#pulse').innerHTML = `${rich(P.volume.text)} That is roughly one every ${every.toFixed(1)} seconds`
+        + `<span aria-hidden="true">, or about <b id="count">0</b> since you opened this page</span>.`;
+      const count = $('#count');
+      setInterval(() => { count.textContent = Math.floor((performance.now() - opened) / 1000 / every); }, 400);
+    }
+
+    /* ----- Sections ----- */
+    put('results', each(P.results, r => `
+      <article class="result">
+        <div><h3>${esc(r.title)}</h3><p>${rich(r.how)}</p><small>${esc(r.where)}</small></div>
+        <div class="pair" role="img" aria-label="Before: ${esc(r.before.label)}. After: ${esc(r.after.label)}.">
+          <div class="line"><span>Before</span><span class="track"><i class="bar"></i><b>${esc(r.before.label)}</b></span></div>
+          <div class="line"><span>After</span><span class="track"><i class="bar after" style="--to:${+(r.after.value / r.before.value).toFixed(4) || 0}"></i><b>${esc(r.after.label)}</b></span></div>
+        </div>
+      </article>`));
+
+    put('focus', each(P.focus, f => `<div><h3>${esc(f.title)}</h3><p>${rich(f.text)}</p></div>`));
+
+    put('experience', each(P.experience, e => `
+      <article class="row">
+        <p class="when">${esc(e.start)} to ${esc(e.end)}<br>${esc(e.location)}</p>
+        <div>
+          <div class="row-head">
+            <div><h3>${link(e.company, e.url)}</h3><p class="role">${esc(e.role)}</p></div>
+            ${e.awards?.length ? `<ul class="stamps" aria-label="Recognition">${each(e.awards, a => `<li class="stamp">${esc(a.title)}${a.detail ? ` <span>${esc(a.detail)}</span>` : ''}</li>`)}</ul>` : ''}
+          </div>
+          <ul class="points">${each(e.points, p => `<li>${rich(p)}</li>`)}</ul>
+        </div>
+      </article>`));
+
+    put('projects', each(P.projects, p => `
+      <article class="project">
+        <h3>${link(p.name, p.url)}</h3>
+        <p class="role">${esc(p.role)}</p>
+        <p>${rich(p.text)}</p>
+        ${p.stack?.length ? `<p class="stack">${esc(p.stack.join(', '))}</p>` : ''}
+      </article>`));
+
+    put('skills', each(P.skills, s => `<div class="row"><h3 class="group">${esc(s.group)}</h3><p>${esc(s.items.join(', '))}</p></div>`));
+
+    put('education', each(P.education, e => `
+      <article class="row">
+        <p class="when">${esc(e.start)} to ${esc(e.end)}<br>${esc(e.location)}</p>
+        <div><h3>${link(e.school, e.url)}</h3><p class="role">${esc(e.degree)}</p>${e.notes ? `<p class="note">${rich(e.notes)}</p>` : ''}</div>
+      </article>`));
+
+    $('#nav').innerHTML = $$('section[data-nav]:not([hidden])').map(s => `<a href="#${s.id}">${s.dataset.nav}</a>`).join('');
+
+    /* ----- The cheque: fill it in, it opens an email draft ----- */
+    const today = new Date();
+    $('#c-date').textContent = today.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    $('#c-payee').textContent = P.name;
+    $('#c-ask').textContent = P.contact.ask;
+    $('#c-amount').textContent = `**${P.contact.amount}**`;
+    $('#contact-note').innerHTML = `Fill in the cheque and it opens a draft in your email app. Or write to ${link(P.email, mail)}.`;
+    const ymd = [today.getFullYear(), today.getMonth() + 1, today.getDate()].map(n => String(n).padStart(2, '0')).join('');
+    micr($('#micr'), `U000001U T${P.volume?.perDay ?? '000000'}T ${ymd}U`);
+    const draft = (memo, from) => `${mail}?subject=${encodeURIComponent(memo || 'Hello from your website')}&body=${encodeURIComponent(`${P.contact.greeting}\n\n\n\n${from}`)}`;
+    $('#cheque').addEventListener('submit', e => {
+      e.preventDefault();
+      const f = new FormData(e.target);
+      location.href = draft(f.get('memo').trim(), f.get('from').trim());
+      $('#c-status').innerHTML = `Email draft opened. Nothing happened? Write to ${link(P.email, mail)}.`;
+    });
+
+    /* ----- Footer ----- */
+    $('#f-id').textContent = `${P.name}, ${P.location}`;
+    $('#f-links').innerHTML = link(P.email, mail) + each(P.links, l => link(l.label, l.url));
+
+    /* ----- The "after" bars shrink to their true length when you reach them ----- */
+    const seen = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); seen.unobserve(e.target); }
+    }), { threshold: .6 });
+    $$('.result').forEach(el => seen.observe(el));
+
+    plate();
+    if (new URLSearchParams(location.search).has('check')) check(draft);
+  }
+
+  /* ----- MICR line: the machine-readable digits along the bottom of a cheque.
+     U and T are the "on-us" and "transit" symbols. Each glyph is a 7 x 9 grid. ----- */
+  function micr(svg, text) {
+    const G = {
+      0: '.#####. ##...## ##...## ##...## ##...## ##...## ##...## ##...## .#####.',
+      1: '...##.. ...##.. ...##.. ...##.. ...##.. .####.. .####.. .####.. .####..',
+      2: '.#####. .....#. .....#. .....#. .#####. .##.... .##.... .##.... .#####.',
+      3: '#####.. ....#.. ....#.. ....#.. .###### .....## .....## .....## #######',
+      4: '##..... ##..... ##..... ##..##. ####### ....##. ....##. ....##. ....##.',
+      5: '######. #...... #...... #...... ####### .....## .....## .....## #######',
+      6: '#####.. ##..... ##..... ##..... ####### ##...## ##...## ##...## #######',
+      7: '######. ##...#. ##...#. .....#. ....##. ....##. ....##. ....##. ....##.',
+      8: '.#####. .#...#. .#...#. .#...#. ####### ##...## ##...## ##...## #######',
+      9: '####### ##...## ##...## ##...## ####### .....## .....## .....## .....##',
+      T: '##..... ##..### ##..### ##..### ##..... ##..### ##..### ##..### ##.....',
+      U: '.....## .....## .....## ....... ##.##.. ##.##.. ##.##.. ##.##.. ##.##..',
+    };
+    let d = '', x = 0;
+    for (const ch of text) {
+      (G[ch] || '').split(' ').forEach((row, y) => {
+        for (const run of row.matchAll(/#+/g)) d += `M${x + run.index} ${y}h${run[0].length}v1h-${run[0].length}z`;
+      });
+      x += ch === ' ' ? 6 : 9;
+    }
+    svg.setAttribute('viewBox', `-1 -1 ${x} 11`);
+    svg.innerHTML = `<path d="${d}"/>`;
+  }
+
+  /* ----- The guilloche plate.
+     Each band is a family of sine waves wrapped round a circle, the figure a rose
+     engine cuts into banknotes. One seed number decides every band. The bands sit
+     on two layers that turn against each other, so the pattern never repeats. ----- */
+  function plate() {
+    const el = $('#plate'), layers = $$('canvas', el), TAU = Math.PI * 2;
+    const css = getComputedStyle(document.documentElement);
+    const inks = ['--iris-a', '--iris-b', '--iris-c'].map(v => css.getPropertyValue(v).trim());
+    const random = seed => () => {            // mulberry32: small, seedable, good enough for ornament
+      seed = seed + 0x6D2B79F5 | 0;
+      let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+    const bands = seed => {
+      const r = random(seed), pick = (...a) => a[r() * a.length | 0];
+      const petals = pick(10, 12, 14, 16), eyes = pick(13, 15, 17);
+      // on: which layer. mid, amp: radius and swing, as fractions of the plate. n: lobes. k: strands.
+      // a: strand amplitude runs from a[0] to a[1]. ph: phase spread across the strands, in turns. off: phase offset, in turns.
+      return [
+        { on: 0, mid: .962, amp: .03,  n: petals * pick(4, 5, 6), k: 6, a: [1, 1], ph: 1, off: 0 },              // lace border
+        { on: 1, mid: .8,   amp: .115, n: petals, k: eyes, a: [-1, 1], ph: 0, off: 0 },                            // chain of eyes
+        { on: 0, mid: .8,   amp: .115, n: petals, k: eyes, a: [-1, 1], ph: 0, off: .25 },                          // the same chain, a quarter turn on
+        { on: 1, mid: .52,  amp: .15,  n: pick(5, 6, 7, 8, 9), k: pick(16, 18, 20), a: [1, 1], ph: pick(.5, .5, 1), off: 0 },   // twisted ribbon
+        { on: 0, mid: .2,   amp: .15,  n: pick(4, 5, 6, 8), k: pick(12, 14, 16), a: [1, 1], ph: 1, off: 0 },      // core
+      ];
+    };
+
+    let seed = parseInt(new URLSearchParams(location.search).get('plate'), 16);
+    if (!(seed >= 0)) seed = Math.random() * 0xFFFFFF | 0;
+
+    const draw = () => {
+      const dpr = Math.min(devicePixelRatio || 1, 3), size = Math.round(el.clientWidth * dpr), c = size / 2, R = c - 2;
+      const ctx = layers.map((cv, i) => {
+        cv.width = cv.height = size;
+        const g = cv.getContext('2d'), ink = i ? g.createLinearGradient(0, 0, size, size) : g.createLinearGradient(0, size, size, 0);
+        inks.forEach((colour, n) => ink.addColorStop(n / (inks.length - 1), colour));
+        g.strokeStyle = ink;
+        g.lineWidth = .6 * dpr;
+        return g;
+      });
+      for (const b of bands(seed)) {
+        const g = ctx[b.on], steps = Math.max(720, b.n * 24);
+        for (let j = 0; j < b.k; j++) {
+          const amp = b.amp * (b.a[0] + (b.a[1] - b.a[0]) * (b.k > 1 ? j / (b.k - 1) : 0));
+          const phase = TAU * (b.off + b.ph * j / b.k);
+          g.beginPath();
+          for (let i = 0; i <= steps; i++) {
+            const t = TAU * i / steps, rad = R * (b.mid + amp * Math.sin(b.n * t + phase));
+            g.lineTo(c + rad * Math.cos(t), c + rad * Math.sin(t));
+          }
+          g.stroke();
+        }
+      }
+      $('#plate-no').textContent = seed.toString(16).toUpperCase().padStart(6, '0');
+    };
+    const cut = () => { el.classList.remove('cutting'); void el.offsetWidth; el.classList.add('cutting'); };
+
+    draw(); cut();
+    el.addEventListener('animationend', e => e.animationName === 'cut' && el.classList.remove('cutting'));
+    $('#recut').addEventListener('click', () => { seed = Math.random() * 0xFFFFFF | 0; draw(); cut(); });
+    // Moving the mouse across the page turns the two layers against each other.
+    document.addEventListener('pointermove', e => {
+      if (e.pointerType === 'mouse' && !el.classList.contains('paused')) el.style.setProperty('--tilt', ((e.clientX / innerWidth - .5) * 36).toFixed(1));
+    });
+    let width = el.clientWidth, timer;
+    new ResizeObserver(() => {
+      if (el.clientWidth === width) return;
+      width = el.clientWidth; clearTimeout(timer); timer = setTimeout(draw, 150);
+    }).observe(el);
+    new IntersectionObserver(([e]) => el.classList.toggle('paused', !e.isIntersecting)).observe(el);
+  }
+
+  /* ----- index.html?check: the one runnable check. Run it after editing content.js. ----- */
+  function check(draft) {
+    const bad = [], need = (ok, msg) => ok || bad.push(msg);
+    for (const k of ['name', 'role', 'headline', 'intro', 'location', 'email']) need(P[k], `${k} is empty`);
+    for (const [key, sel] of Object.entries({ results: '.result', focus: '.focus > div', experience: '#experience .row', projects: '.project', skills: '#skills .row', education: '#education .row' }))
+      need($$(sel).length === (P[key] || []).length, `${key}: ${(P[key] || []).length} in content.js but ${$$(sel).length} on the page`);
+    (P.results || []).forEach((r, i) => need(r.before.value > 0 && r.after.value >= 0 && r.after.value <= r.before.value,
+      `results[${i}] "${r.title}": both values must be numbers, and "after" no bigger than "before"`));
+    need(!P.volume || P.volume.perDay > 0, 'volume.perDay must be a number above 0');
+    need(decodeURIComponent(draft('a & b?', 'Me')).endsWith('subject=a & b?&body=' + P.contact.greeting + '\n\n\n\nMe'), 'the email draft link is not encoding its text');
+    need($('#micr path').getAttribute('d').length > 100, 'the MICR line did not draw');
+    need($$('#plate canvas').every(cv => cv.width > 0), 'the plate did not draw');
+    document.body.insertAdjacentHTML('beforeend', `<pre class="check${bad.length ? ' bad' : ''}" role="status">${bad.length ? esc(bad.join('\n')) : 'content.js checks passed'}</pre>`);
+  }
+})();
+</script>
+</body>
+</html>

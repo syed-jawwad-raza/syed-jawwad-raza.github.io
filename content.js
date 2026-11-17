@@ -32,8 +32,8 @@ window.PORTFOLIO = {
   /* ---------- The live line under the hero ----------
      perDay drives the "one every N seconds" sum and the running count. */
   volume: {
-    perDay: 50000,
-    text: "The remittance system I own at TPS processes **50,000+ remittances a day**.",
+    perDay: 100000,
+    text: "The remittance system I own at TPS processes **100,000+ remittances a day**.",
   },
 
   /* ---------- Results ----------
